@@ -36,11 +36,11 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
 
-        let chunks = chunk(result.data.episodes.edges, PER_PAGE);
+        const chunks = chunk(result.data.episodes.edges, PER_PAGE);
 
         chunks.forEach((chunk, index) => {
           createPage({
-            path: index === 0 ? `/` : `/page/${index + 1}`,
+            path: index === 0 ? `episodes/` : `/episodes/${index + 1}`,
             component: episodeListTemplate,
             context: {
               skip: PER_PAGE * index,

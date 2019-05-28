@@ -1,0 +1,55 @@
+@mixin respond($size) {
+  @if $size == large {
+    @media all and (min-width: 1024px) { @content ; }
+  }
+  @else if $size == medium {
+    @media all and (min-width: 760px) { @content ; }
+  }
+  @else if $size == small {
+    @media all and (min-width: 480px)  { @content ; }
+  }
+}
+
+@mixin episodeItem {
+  &__cover {
+    min-width: 250px;
+    max-width: 350px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 15px;
+
+    @include respond(medium) {
+      margin: 0 15px 0 0;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+
+    @include respond(medium) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    @extend %heading-secondary;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  &__description {
+    @extend %copy;
+    margin-bottom: 15px;
+  }
+
+  &__release-date {
+    @extend %copy;
+  }
+
+  &__player {
+    width: 100%;
+  }
+}
+

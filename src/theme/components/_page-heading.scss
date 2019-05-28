@@ -1,0 +1,14 @@
+.page-heading {
+  text-align: center;
+  margin: 0 0 75px;
+
+  &__title {
+    @extend %heading-primary;
+    margin: 0;
+  }
+
+  &__subtitle {
+    @extend %heading-secondary;
+    margin: 0;
+  }
+}

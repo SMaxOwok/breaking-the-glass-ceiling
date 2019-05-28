@@ -3,6 +3,11 @@ const chunk = require("lodash/chunk");
 
 const PER_PAGE = 10;
 
+// https://www.w3resource.com/javascript-exercises/javascript-string-exercise-7.php
+function parameterize(string) {
+  return string.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
+}
+
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
@@ -12,9 +17,17 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
   })
 };
 
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type !== "MarkdownRemark") return null;
+
+  createNodeField({ node, name: "slug", value: parameterize(node.frontmatter.title) });
+};
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
-  const episodeListTemplate = path.resolve(`src/templates/episodeList.js`);
+  const episodeTemplate = path.resolve("src/templates/episode.js");
+  const episodeListTemplate = path.resolve("src/templates/episodeList.js");
 
   return new Promise((resolve, reject) => {
     resolve(
@@ -25,31 +38,43 @@ exports.createPages = ({ graphql, actions }) => {
               edges {
                 node {
                   id
+                  fields {
+                    slug
+                  }
                 }
               }
             }
           }
         `
       ).then(result => {
-        if (result.errors) {
-          reject(result.errors)
-        }
+        if (result.errors) reject(result.errors);
 
+        const episodes = result.data.episodes.edges;
 
-        const chunks = chunk(result.data.episodes.edges, PER_PAGE);
-
-        chunks.forEach((chunk, index) => {
+        // Make individual page for each episode
+        episodes.forEach(({ node }) => {
           createPage({
-            path: index === 0 ? `episodes/` : `/episodes/${index + 1}`,
+            path: node.fields.slug,
+            component: episodeTemplate,
+            context: {
+              slug: node.fields.slug
+            }
+          });
+        });
+
+        // Paginate episodes and make index pages
+        chunk(episodes, PER_PAGE).forEach((chunk, index) => {
+          createPage({
+            path: index === 0 ? "episodes/" : `/episodes/${index + 1}`,
             component: episodeListTemplate,
             context: {
               skip: PER_PAGE * index,
               limit: PER_PAGE,
               pageNumber: index + 1
             }
-          })
-        })
+          });
+        });
       })
-    )
+    );
   })
 };

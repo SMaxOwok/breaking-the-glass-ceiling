@@ -16,11 +16,13 @@ export default class EpisodeList extends React.Component {
           <ul className="episode-list__list">
             {this.episodes.map(({ node }, index) => (
               <li key={index} className="episode-list__list-item">
-                <h2 className="episode-list__list-item__title">{node.frontmatter.title}</h2>
-                <div className="episode-list__list-item__body">
+                <h2 className="episode-list__list-item__title">
+                  <a href={node.fields.slug}>{node.frontmatter.title}</a>
+                </h2>
+                <div className="episode-list__list-item__content">
                   <Img className="episode-list__list-item__cover" fluid={node.frontmatter.cover.childImageSharp.fluid} />
-                  <div>
-                    <div className="episode-list__list-item__description" dangerouslySetInnerHTML={{ __html: node.html }}></div>
+                  <div className="episode-list__list-item__body">
+                    <div className="episode-list__list-item__description" dangerouslySetInnerHTML={{ __html: node.html }} />
                     <audio className="episode-list__list-item__player" controls={true} preload="none">
                       <source src={node.frontmatter.audio} />
                     </audio>
@@ -55,6 +57,9 @@ export const EpisodeListQuery = graphql`
                 }
               }
             }
+          }
+          fields {
+            slug
           }
           html
         }

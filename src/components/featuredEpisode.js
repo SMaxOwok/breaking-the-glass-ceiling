@@ -9,10 +9,10 @@ const Component = ({ episode }) => {
   return (
     <section className="featured-episode">
       <h2 className="featured-episode__title">{episode.frontmatter.title}</h2>
-      <div className="featured-episode__body">
+      <div className="featured-episode__content">
         <Img className="featured-episode__cover" fluid={episode.frontmatter.cover.childImageSharp.fluid} />
-        <div>
-          <div className="featured-episode__description" dangerouslySetInnerHTML={{ __html: episode.html }}></div>
+        <div className="featured-episode__body">
+          <div className="featured-episode__description" dangerouslySetInnerHTML={{ __html: episode.html }} />
           <audio className="featured-episode__player" controls={true} preload="none">
             <source src={episode.frontmatter.audio} />
           </audio>

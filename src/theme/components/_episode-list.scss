@@ -12,5 +12,29 @@
     + .episode-list__list-item {
       margin-top: 75px;
     }
+
+    &__title {
+      a {
+        color: #000;
+        text-decoration: none;
+
+        &:visited {
+          color: #000;
+        }
+
+        &:hover {
+          &::after {
+            margin-left: 13px;
+          }
+        }
+
+        &::after {
+          content: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000' d='M0 9.686h18'/%3E%3Cpath d='M19.531 7.311H12.22M19.531 7.311H12.22M19.777 6.718h-8.992'/%3E%3Cpath stroke='%23000' d='M18.46 9.896l-5.17-5.17'/%3E%3Cpath d='M19.656 11.936h-7.312M19.656 11.936h-7.312M19.656 11.936h-7.312M19.883 12.483h-8.86M19.656 11.936h-7.312M19.656 11.936h-7.312M19.656 11.936h-7.312'/%3E%3Cpath stroke='%23000' d='M18.585 9.316l-5.291 5.292'/%3E%3C/svg%3E");
+          margin-left: 8px;
+          vertical-align: middle;
+          transition: margin 100ms linear;
+        }
+      }
+    }
   }
 }

@@ -26,6 +26,12 @@
   &__body {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
     margin-top: 15px;
 
     @include respond(medium) {

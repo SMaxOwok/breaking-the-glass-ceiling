@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "components/layout";
 import Img from "gatsby-image";
 
@@ -17,7 +17,7 @@ export default class EpisodeList extends React.Component {
             {this.episodes.map(({ node }, index) => (
               <li key={index} className="episode-list__list-item">
                 <h2 className="episode-list__list-item__title">
-                  <a href={node.fields.slug}>{node.frontmatter.title}</a>
+                  <Link to={`/${node.fields.slug}`}>{node.frontmatter.title}</Link>
                 </h2>
                 <div className="episode-list__list-item__content">
                   <Img className="episode-list__list-item__cover" fluid={node.frontmatter.cover.childImageSharp.fluid} />

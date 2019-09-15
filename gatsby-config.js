@@ -30,6 +30,8 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -40,10 +42,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`
       },
-    },
-    {
-      resolve: `gatsby-plugin-sass`,
-      includePaths: [`${__dirname}/src/theme`]
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

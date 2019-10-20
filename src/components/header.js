@@ -28,9 +28,6 @@ export default () => (
           <Link to="/about" className="header__nav-item">
             About
           </Link>
-          <Link to="/episodes" className="header__nav-item">
-            Episodes
-          </Link>
         </div>
       </header>
     )}

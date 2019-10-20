@@ -1,11 +1,9 @@
 const path = require("path");
-const chunk = require("lodash/chunk");
-
-const PER_PAGE = 10;
+const groupBy = require("lodash/groupBy");
 
 // https://www.w3resource.com/javascript-exercises/javascript-string-exercise-7.php
 function parameterize(string) {
-  return string.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
+  return string.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/g, "").replace(/\s/g, "-");
 }
 
 
@@ -21,13 +19,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type !== "MarkdownRemark") return null;
 
+  createNodeField({ node, name: "season", value: path.basename(getNode(node.parent).dir) });
   createNodeField({ node, name: "slug", value: parameterize(node.frontmatter.title) });
 };
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   const episodeTemplate = path.resolve("src/templates/episode.js");
-  const episodeListTemplate = path.resolve("src/templates/episodeList.js");
+  const seasonEpisodeList = path.resolve("src/templates/seasonEpisodeList.js");
 
   return new Promise((resolve, reject) => {
     resolve(
@@ -39,6 +38,7 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   id
                   fields {
+                    season
                     slug
                   }
                 }
@@ -50,28 +50,27 @@ exports.createPages = ({ graphql, actions }) => {
         if (result.errors) reject(result.errors);
 
         const episodes = result.data.episodes.edges;
+        const episodesBySeason = groupBy(episodes, 'node.fields.season');
 
-        // Make individual page for each episode
-        episodes.forEach(({ node }) => {
+        Object.keys(episodesBySeason).forEach(season => {
+          // Make season index pages
           createPage({
-            path: node.fields.slug,
-            component: episodeTemplate,
+            path: `${season}`,
+            component: seasonEpisodeList,
             context: {
-              slug: node.fields.slug
+              season: season,
             }
           });
-        });
 
-        // Paginate episodes and make index pages
-        chunk(episodes, PER_PAGE).forEach((chunk, index) => {
-          createPage({
-            path: index === 0 ? "episodes/" : `/episodes/${index + 1}`,
-            component: episodeListTemplate,
-            context: {
-              skip: PER_PAGE * index,
-              limit: PER_PAGE,
-              pageNumber: index + 1
-            }
+          // Make individual page for each episode in season
+          episodesBySeason[season].forEach(({ node }) => {
+            createPage({
+              path: `${season}/${node.fields.slug}`,
+              component: episodeTemplate,
+              context: {
+                ...node.fields
+              }
+            });
           });
         });
       })

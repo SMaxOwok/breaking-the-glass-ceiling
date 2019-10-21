@@ -27,6 +27,16 @@
     }
   }
 
+  &__links {
+    display: none;
+
+    @include respond(medium) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   &__nav-item {
     font-family: "Oswald", sans-serif;
     letter-spacing: 0.075em;

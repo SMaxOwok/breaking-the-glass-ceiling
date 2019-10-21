@@ -6,13 +6,16 @@ import Img from "gatsby-image";
 export default () => (
   <StaticQuery
     query={graphql`
-      query PDXWITLogoQuery {
+      query HeaderQuery {
         logoImage: file(absolutePath: { regex: "/src/images/pdxwit_logo.png/" }) {
           childImageSharp {
             fixed(height: 50) {
               ...GatsbyImageSharpFixed
             }
           }
+        },
+        seasons: allMarkdownRemark {
+          distinct(field: fields___season)
         }
       }
     `}
@@ -25,6 +28,11 @@ export default () => (
         </div>
 
         <div className="header__nav header__nav--right">
+          {data.seasons.distinct.map(season => (
+            <Link to={`/${season}`} className="header__nav-item">
+              {season.replace(/-/, " ")}
+            </Link>
+          ))}
           <Link to="/about" className="header__nav-item">
             About
           </Link>

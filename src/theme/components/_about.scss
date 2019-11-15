@@ -1,0 +1,160 @@
+.about {
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
+
+  &__header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    &__body {
+      text-align: left;
+    }
+
+    @include respond(medium) {
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: row;
+    }
+  }
+
+  &__cover {
+    max-height: 250px;
+    max-width: 250px;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    @include respond(medium) {
+      height: 100%;
+      margin: 0 0 0 2rem;
+    }
+  }
+
+  &__badges {
+    display: block;
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 0;
+    list-style: none;
+
+    @include respond(small) {
+      display: grid;
+      grid-gap: 25px;
+      grid-template-columns: repeat(auto-fill, 165px);
+    }
+  }
+
+  &__badge {
+    display: block;
+    margin: 0 auto 1rem;
+
+    a {
+      display: inline-block;
+    }
+
+    img {
+      min-height: 40px;
+      max-height: 60px;
+      width: auto;
+    }
+  }
+
+  &__title {
+    font-family: "League Gothic", sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    letter-spacing: 0.05em;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.075em;
+    font-size: 16px;
+    margin: 15px 0;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    letter-spacing: 0.05em;
+    line-height: 1.25em;
+    margin: 15px 0;
+    text-align: left;
+  }
+
+  &__callout {
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+
+    a {
+      color: #97de3f;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px solid #97de3f;
+      }
+    }
+  }
+
+  &__team {
+    text-align: left;
+    margin: 75px 0 70px;
+  }
+
+  &__team-list {
+    display: grid;;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+    padding: 0;
+    list-style: none;
+  }
+
+  &__team-member {
+    text-align: center;
+
+    span {
+      display: block;
+      font-weight: bold;
+      white-space: nowrap;
+
+      + span {
+        margin-top: 5px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &__headshot {
+    margin: 0 auto 1rem;
+    max-height: 200px;
+    max-width: 200px;
+  }
+
+  &__donate {
+    margin-top: 100px;
+    text-align: left;
+
+    &__link {
+      text-align: center;
+
+      a {
+        display: inline-block;
+        background-color: #97DE3F;
+        border-radius: 6px;
+        padding: 0.75rem 0.875rem;
+        color: #FFF;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background-color 200ms linear;
+
+        &:hover {
+          background-color: darken(#97DE3F, 10%);
+        }
+      }
+    }
+  }
+}

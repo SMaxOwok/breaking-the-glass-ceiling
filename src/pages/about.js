@@ -42,6 +42,20 @@ export default () => {
           }
         }
       }
+      minaMeman: file(absolutePath: { regex: "/src/images/team/mina_meman.jpg/" }) {
+        childImageSharp {
+          fluid(maxHeight: 200, maxWidth: 200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      sarahMayfield: file(absolutePath: { regex: "/src/images/team/sarah_mayfield.png/" }) {
+        childImageSharp {
+          fluid(maxHeight: 200, maxWidth: 200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
 
@@ -106,6 +120,16 @@ export default () => {
               <Img className="about__headshot" fluid={data.maxOno.childImageSharp.fluid} />
               <span>Max Ono</span>
               <span>Audio Engineer</span>
+            </li>
+            <li className="about__team-member">
+              <Img className="about__headshot" fluid={data.minaMeman.childImageSharp.fluid} />
+              <span>Mina Meman</span>
+              <span>Podcast Transcriber</span>
+            </li>
+            <li className="about__team-member">
+              <Img className="about__headshot" fluid={data.sarahMayfield.childImageSharp.fluid} />
+              <span>Sarah Mayfield</span>
+              <span>Podcast Transcriber</span>
             </li>
           </ul>
         </div>

@@ -147,7 +147,7 @@ export default () => {
           </p>
 
           <div className="about__donate__link">
-            <a href="https://www.pdxwit.org/giving" target="_blank">Donate</a>
+            <a href="https://www.pdxwit.org/giving" target="_blank" rel="noopener noreferrer">Donate</a>
           </div>
         </div>
       </section>

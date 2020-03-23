@@ -8,7 +8,7 @@ const Pagination = ({ prevPage, nextPage }) => (
         className="Pagination__link"
         to={prevPage}
       >
-        Previous Page
+        Newer Episodes
       </Link>
     )}
 
@@ -17,7 +17,7 @@ const Pagination = ({ prevPage, nextPage }) => (
         className="Pagination__link"
         to={nextPage}
       >
-        Next Page
+        Older Episodes
       </Link>
     )}
   </div>

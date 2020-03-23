@@ -1,7 +1,7 @@
 const path = require("path");
 const { paginate } = require("gatsby-awesome-pagination");
 
-const PER_PAGE = 10;
+const PER_PAGE = 5;
 
 // https://www.w3resource.com/javascript-exercises/javascript-string-exercise-7.php
 function parameterize(string) {

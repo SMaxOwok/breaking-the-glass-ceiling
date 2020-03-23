@@ -13,6 +13,9 @@ const Links = () => (
     <Link to="/about" className="header__nav-item">
       About
     </Link>
+    <a href="https://www.pdxwit.org/giving" className="header__nav-item" target="_blank">
+      Donate
+    </a>
   </Fragment>
 );
 

@@ -1,5 +1,5 @@
 const path = require("path");
-const chunk = require("lodash/chunk");
+const { paginate } = require("gatsby-awesome-pagination");
 
 const PER_PAGE = 10;
 
@@ -54,16 +54,12 @@ exports.createPages = ({ graphql, actions }) => {
         const episodes = result.data.episodes.edges;
 
         // Paginate episodes and make index pages
-        chunk(episodes, PER_PAGE).forEach((chunk, index) => {
-          createPage({
-            path: index === 0 ? "episodes/" : `/episodes/${index + 1}`,
-            component: episodeListTemplate,
-            context: {
-              skip: PER_PAGE * index,
-              limit: PER_PAGE,
-              pageNumber: index === 0 ? 1 : index
-            }
-          });
+        paginate({
+          createPage,
+          items: episodes,
+          itemsPerPage: PER_PAGE,
+          pathPrefix: '/episodes',
+          component: episodeListTemplate,
         });
 
         // Make individual page for each episode in season

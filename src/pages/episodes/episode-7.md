@@ -1,7 +1,8 @@
 ---
-title: "Episode 7: Dayna Del Mar"
+title: "Dayna Del Mar"
+episode_number: 7
 release_date: "2019-08-01"
-cover: ../../../images/episodes/season-1/episode-7.jpg
+cover: ../../images/episodes/episode-7.jpg
 audio: https://traffic.libsyn.com/pdxwit/E07_05_25_2019_dayna.mp3
 ---
 On this episode of BTGC, Juliana and Brit are speaking with Dayna Del Mar, who uses she/her pronouns. Dayna brings a unique combination of community building, people and culture operations, global travel and talent acquisition to her role as CEO of PackDen. 

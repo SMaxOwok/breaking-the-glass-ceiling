@@ -9,7 +9,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <section className="episode">
-        <h2 className="episode__title">{node.frontmatter.title}</h2>
+        <h2 className="episode__title">{`Episode ${node.frontmatter.episode_number}: ${node.frontmatter.title}`}</h2>
         <div className="episode__content">
           <Img className="episode__cover" fluid={node.frontmatter.cover.childImageSharp.fluid} />
           <div className="episode__body">
@@ -29,6 +29,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter { 
         title
+        episode_number
         release_date
         audio
         cover {

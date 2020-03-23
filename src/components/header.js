@@ -1,9 +1,20 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image";
 
 import MobileMenu from "./mobileMenu";
+
+const Links = () => (
+  <Fragment>
+    <Link to="/episodes" className="header__nav-item">
+      Episodes
+    </Link>
+    <Link to="/about" className="header__nav-item">
+      About
+    </Link>
+  </Fragment>
+);
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -14,17 +25,9 @@ const Header = () => {
             ...GatsbyImageSharpFixed
           }
         }
-      },
-      seasons: allMarkdownRemark {
-        distinct(field: fields___season)
       }
     }
   `);
-
-  const links = [
-    ...data.seasons.distinct,
-    'about'
-  ];
 
   return (
     <header className="header">
@@ -36,14 +39,12 @@ const Header = () => {
 
       <div className="header__nav header__nav--right">
         <div className="header__links">
-          {links.map(link => (
-            <Link key={link} to={`/${link}`} className="header__nav-item">
-              {link.replace(/-/, " ")}
-            </Link>
-          ))}
+          <Links />
         </div>
 
-        <MobileMenu links={links} />
+        <MobileMenu>
+          <Links />
+        </MobileMenu>
       </div>
     </header>
   );

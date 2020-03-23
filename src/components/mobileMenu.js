@@ -1,13 +1,12 @@
 import React, { PureComponent } from "react"
 import * as propTypes from "prop-types";
 import classnames from "classnames";
-import { Link } from "gatsby"
 
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default class MobileMenu extends PureComponent {
   static propTypes = {
-    links: propTypes.arrayOf(propTypes.string).isRequired
+    children: propTypes.node.isRequired
   };
 
   state = {
@@ -44,11 +43,7 @@ export default class MobileMenu extends PureComponent {
             <FaTimes />
           </i>
 
-          {this.props.links.map(link => (
-            <Link key={link} to={`/${link}`} className="mobile-menu__nav-item">
-              {link.replace(/-/, " ")}
-            </Link>
-          ))}
+          {this.props.children}
         </div>
       </div>
     );

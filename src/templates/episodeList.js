@@ -3,6 +3,8 @@ import { graphql, Link } from "gatsby";
 import Layout from "components/layout";
 import Img from "gatsby-image";
 
+import Pagination from "components/pagination";
+
 export default class EpisodeList extends React.Component {
   get episodes() {
     return this.props.data.allMarkdownRemark.edges;
@@ -33,6 +35,11 @@ export default class EpisodeList extends React.Component {
               </li>
             ))}
           </ul>
+
+          <Pagination
+            prevPage={this.props.pageContext.previousPagePath}
+            nextPage={this.props.pageContext.nextPagePath}
+          />
         </section>
       </Layout>
     )

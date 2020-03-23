@@ -1,7 +1,8 @@
 ---
-title: "Episode 8: Karvari Ellingson"
+title: "Karvari Ellingson"
+episode_number: 8
 release_date: "2019-09-01"
-cover: ../../../images/episodes/season-1/episode-8.jpg
+cover: ../../images/episodes/episode-8.jpg
 audio: https://traffic.libsyn.com/pdxwit/E08_08_17_2019_karvari.mp3
 ---
 Karvari Ellingson was having a hard time after getting her Fine Arts degree. She got tired of having to choose between eating and paying bills, so she picked up “computer programming” out of a list of “10 highest paying careers” and ran with it.

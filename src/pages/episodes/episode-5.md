@@ -1,7 +1,8 @@
 ---
-title: "Episode 5: Ruth Lesser, Part 1"
+title: "Ruth Lesser, Part 1"
+episode_number: 5
 release_date: "2019-07-01"
-cover: ../../../images/episodes/season-1/episode-5.jpg
+cover: ../../images/episodes/episode-5.jpg
 audio: https://traffic.libsyn.com/pdxwit/E05_05_11_2019_ruth.mp3
 ---
 H1B visa immigrant, Ruth Lesser, has been living in this country for 10 years and just bought her first home in 2018. In March of this year she found out her visa extension had been denied and is in the process of petitioning a review with her current employer and their legal team. If that attempt gets denied by US Citizenship and Immigration again, she will have only 4 weeks to leave the US.

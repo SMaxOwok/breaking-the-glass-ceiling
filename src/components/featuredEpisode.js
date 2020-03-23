@@ -8,7 +8,7 @@ const Component = ({ episode }) => {
 
   return (
     <section className="featured-episode">
-      <h2 className="featured-episode__title">{episode.frontmatter.title}</h2>
+      <h2 className="featured-episode__title">{`Episode ${episode.frontmatter.episode_number}: ${episode.frontmatter.title}`}</h2>
       <div className="featured-episode__content">
         <Img className="featured-episode__cover" fluid={episode.frontmatter.cover.childImageSharp.fluid} />
         <div className="featured-episode__body">
@@ -34,6 +34,7 @@ export default () => (
             node {
               frontmatter {
                 title
+                episode_number
                 release_date
                 audio
                 cover {

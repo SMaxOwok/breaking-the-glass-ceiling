@@ -1,4 +1,4 @@
-.season-episode-list {
+.episode-list {
   &__list {
     list-style: none;
     margin-top: 0;
@@ -8,7 +8,7 @@
   &__list-item {
     @include episodeItem;
 
-    + .season-episode-list__list-item {
+    + .episode-list__list-item {
       margin-top: 75px;
     }
 

@@ -1,7 +1,8 @@
 ---
-title: "Episode 4: Gabrielle Blackwell"
+title: "Gabrielle Blackwell"
+episode_number: 12
 release_date: "2019-11-18"
-cover: ../../../images/episodes/season-2/episode-4.jpg
+cover: ../../images/episodes/episode-12.jpg
 audio: https://traffic.libsyn.com/pdxwit/S02_E04_10_19_2019_gabrielle.mp3
 ---
 Like many of us, Gabrielle Blackwell longed to feel included in her one-time chosen home of Portland, Oregon. But something didn’t feel right. Although organizations like PDXWIT provide us with a safe space to be ourselves and many ways to get involved, Gabrielle felt something was missing, but could that something be found inside herself?

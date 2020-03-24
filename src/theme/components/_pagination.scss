@@ -1,21 +1,24 @@
 .Pagination {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 3rem;
 
   &__link {
     font-family: "Helvetica Neue", sans-serif;
     text-decoration: none;
     color: #333;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom 0.2s ease;
 
     &:visited {
       color: #333;
     }
 
-    &:hover {
-      border-bottom: 1px solid #333;
+    &--prev {
+      @include arrowLeft;
+    }
+
+    &--next {
+      @include arrowRight;
     }
 
     &--disabled {
@@ -28,7 +31,7 @@
     }
 
     + #{&} {
-      margin-left: 3rem;
+      margin-left: 5rem;
     }
   }
 }

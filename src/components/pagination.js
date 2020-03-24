@@ -5,19 +5,19 @@ const Pagination = ({ prevPage, nextPage }) => (
   <div className="Pagination">
     {!!prevPage && (
       <Link
-        className="Pagination__link"
+        className="Pagination__link Pagination__link--prev"
         to={prevPage}
       >
-        Newer Episodes
+        Newer
       </Link>
     )}
 
     {!!nextPage && (
       <Link
-        className="Pagination__link"
+        className="Pagination__link Pagination__link--next"
         to={nextPage}
       >
-        Older Episodes
+        Older
       </Link>
     )}
   </div>

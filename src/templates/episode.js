@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "components/layout";
+import Transcript from "components/transcript";
 import Img from "gatsby-image";
 
 export default ({ data }) => {
@@ -19,6 +20,10 @@ export default ({ data }) => {
             </audio>
           </div>
         </div>
+
+        {node.frontmatter.transcript && (
+          <Transcript transcript={node.frontmatter.transcript.childMarkdownRemark.html} />
+        )}
       </section>
     </Layout>
   )
@@ -37,6 +42,11 @@ export const query = graphql`
             fluid(maxWidth: 350, maxHeight: 350) {
               ...GatsbyImageSharpFluid
             }
+          }
+        }
+        transcript {
+          childMarkdownRemark {
+            html
           }
         }
       }

@@ -36,7 +36,10 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            episodes: allMarkdownRemark(sort: { fields: [frontmatter___release_date], order: DESC }) {
+            episodes: allMarkdownRemark(
+              filter: { fileAbsolutePath: { regex: "\/episodes/" } }
+              sort: { fields: [frontmatter___release_date], order: DESC }
+            ) {
               edges {
                 node {
                   id

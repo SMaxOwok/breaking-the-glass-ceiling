@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby";
+import Transcript from "components/transcript";
 import get from "lodash/get";
 import Img from "gatsby-image";
 
@@ -18,6 +19,10 @@ const Component = ({ episode }) => {
           </audio>
         </div>
       </div>
+
+      {episode.frontmatter.transcript && (
+        <Transcript transcript={episode.frontmatter.transcript.childMarkdownRemark.html} />
+      )}
     </section>
   )
 };
@@ -27,6 +32,7 @@ export default () => (
     query={graphql`
       query featuredEpisodeQuery {
         allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "\/episodes/" } },
           sort: { fields: [frontmatter___release_date], order: DESC },
           limit: 1
         ) {
@@ -42,6 +48,11 @@ export default () => (
                     fluid(maxWidth: 500, maxHeight: 500) {
                       ...GatsbyImageSharpFluid
                     }
+                  }
+                }
+                transcript {
+                  childMarkdownRemark {
+                    html
                   }
                 }
               }

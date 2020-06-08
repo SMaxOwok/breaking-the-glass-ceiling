@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "components/layout";
+import Transcript from "components/transcript";
 import Img from "gatsby-image";
 
 import Pagination from "components/pagination";
@@ -32,6 +33,10 @@ export default class EpisodeList extends React.Component {
                     </audio>
                   </div>
                 </div>
+
+                {node.frontmatter.transcript && (
+                  <Transcript transcript={node.frontmatter.transcript.childMarkdownRemark.html} />
+                )}
               </li>
             ))}
           </ul>
@@ -49,6 +54,7 @@ export default class EpisodeList extends React.Component {
 export const EpisodeListQuery = graphql`
   query episodeListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "\/episodes/" } },
       sort: { fields: [frontmatter___release_date], order: DESC },
       limit: $limit,
       skip: $skip
@@ -65,6 +71,11 @@ export const EpisodeListQuery = graphql`
                 fluid(maxWidth: 350, maxHeight: 350) {
                   ...GatsbyImageSharpFluid
                 }
+              }
+            }
+            transcript {
+              childMarkdownRemark {
+                html
               }
             }
           }

@@ -4,6 +4,7 @@ episode_number: 9
 release_date: "2019-10-14"
 cover: ../../images/episodes/episode-9.jpg
 audio: https://traffic.libsyn.com/pdxwit/S02_E01_10_12_2019_megan.mp3
+transcript: ../../transcripts/episode-9.md
 ---
 On the Season Two opener of Breaking the Glass Ceiling, new hosts Kimberly Embry and Dawn Mott interview Megan Bigelow. For those who don’t know, Megan is the founder and president of PDXWIT.  In this episode, she shares the evolution of PDXWIT's values.
 

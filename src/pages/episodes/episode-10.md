@@ -4,6 +4,7 @@ episode_number: 10
 release_date: "2019-10-21"
 cover: ../../images/episodes/episode-10.jpg
 audio: https://traffic.libsyn.com/pdxwit/S02_E02_08_24_2019_max_kilaa.mp3
+transcript: ../../transcripts/episode-10.md
 ---
 We start our exploration into living the PDXWIT values with Max Western and Kilaa Slaughter-Scott. At PDXWIT we believe in nurturing our community through career growth and opportunities, mentorship, and skill-building events in a way that is authentic, clear, accessible and relatable. Kilaa and Max are both co-chairs of Cambia Employee Resource Groups.
 

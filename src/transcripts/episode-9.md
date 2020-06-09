@@ -199,7 +199,7 @@ Woot woot.
 And to all of you for listening. And of course, thank you again to our sponsor Kiva whose work has helped students pay for tuition, women start businesses, farmers invest in equipment, and families afford needed emergency care.
 
 **Dawn**:
-On the next episode of Breaking The Glass Ceiling we’ll meet with Keela and Max and find out how they've created Community for themselves and others in the workplace. If you like our content, go ahead and like us wherever your listening to us, subscribe, check out the PDXWIT website. And we'll catch you later.
+On the next episode of Breaking The Glass Ceiling we’ll meet with Kilaa and Max and find out how they've created Community for themselves and others in the workplace. If you like our content, go ahead and like us wherever your listening to us, subscribe, check out the PDXWIT website. And we'll catch you later.
 
 Podcast Outro
 

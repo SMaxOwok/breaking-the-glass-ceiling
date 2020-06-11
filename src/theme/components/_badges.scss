@@ -1,0 +1,35 @@
+.badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2.5rem 0 4.5rem;
+  padding: 0;
+  list-style: none;
+
+  @include respond(medium) {
+    flex-direction: row;
+  }
+
+  &__badge {
+    display: block;
+    margin: 0 0 1rem;
+
+    @include respond(medium) {
+      margin: 0;
+
+      + #{&} {
+        margin-left: 1.5rem;
+      }
+    }
+
+    a {
+      display: inline-block;
+    }
+
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+}

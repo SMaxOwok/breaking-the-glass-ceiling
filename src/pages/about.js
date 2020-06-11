@@ -3,6 +3,7 @@ import Img from "gatsby-image";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Layout from "components/layout";
+import Badges from "components/badges";
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -64,7 +65,7 @@ export default () => {
       <section className="about">
         <div className="about__header">
           <div className="about__header__body">
-            <h1 className="about__title">Breaking The Glass Ceiling: A PDXWIT Podcast</h1>
+            <h1 className="page-heading__title">Breaking The Glass Ceiling: A PDXWIT Podcast</h1>
 
             <p className="about__description">
               {`Breaking The Glass Ceiling: A PDXWIT Podcast highlights the people working to make the tech industry \
@@ -75,30 +76,14 @@ export default () => {
             </p>
             <p className="about__description">New episodes are released twice monthly, on a Monday.</p>
 
-            <ul className="about__badges">
-              <li className="about__badge about__badge-apple">
-                <a href="https://podcasts.apple.com/us/podcast/breaking-the-glass-ceiling-a-pdxwit-podcast/id1456174095?mt=2&app=podcast">
-                  <img alt="Listen on Apple Podcasts" src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2019-11-04T00:00:00Z&kind=podcast&bubble=podcasts" />
-                </a>
-              </li>
-              <li className="about__badge about__badge-google">
-                <a href='https://play.google.com/music/m/Ial22t2b2qk6rb5accjlzcemvnq?t=Breaking_The_Glass_Ceiling_A_PDXWIT_Podcast'>
-                  <img alt="Listen on Google Music" src="https://play.google.com/intl/en_us/badges/static/images/badges-music/en_badge_web_music.png" />
-                </a>
-              </li>
-              <li className="about__badge about__badge-radio-public">
-                <a href="https://radiopublic.com/breaking-the-glass-ceiling-a-pdxw-8g0XVa">
-                  <img alt="Listen on Radio Public" src="https://spotlight.radiopublic.com/images/badges/radiopublic-black.png" />
-                </a>
-              </li>
-            </ul>
+            <Badges />
           </div>
 
           <Img className="about__cover" fluid={data.logoImage.childImageSharp.fluid} />
         </div>
 
         <div className="about__team">
-          <h2 className="about__title">Podcast Volunteer Team</h2>
+          <h2 className="page-heading__title">Podcast Volunteer Team</h2>
           <ul className="about__team-list">
             <li className="about__team-member">
               <Img className="about__headshot" fluid={data.kimberlyEmbry.childImageSharp.fluid} />
@@ -134,11 +119,8 @@ export default () => {
           </ul>
         </div>
 
-        <p className="about__callout">The PDXWIT podcast is sponsored by <a href="https://www.kiva.org" target="_blank" rel="noopener noreferrer">Kiva</a></p>
-        <p className="about__callout">Special thanks to <a href="https://www.castironcoding.com" target="_blank" rel="noopener noreferrer">Cast Iron Coding</a> and Paul M. Trubachik</p>
-
         <div className="about__donate">
-          <h2 className="about__title">Make A Donation</h2>
+          <h2 className="page-heading__title">Make A Donation</h2>
 
           <p className="about__description">
             {`We are a 501(c)(3) non-profit. Any donation helps to transform lives through education, skill-building events, \
@@ -150,6 +132,9 @@ export default () => {
             <a href="https://www.pdxwit.org/giving" target="_blank" rel="noopener noreferrer">Donate</a>
           </div>
         </div>
+
+        <p className="about__callout">The PDXWIT podcast is sponsored by <a href="https://www.kiva.org" target="_blank" rel="noopener noreferrer">Kiva</a></p>
+        <p className="about__callout">Special thanks to <a href="https://www.castironcoding.com" target="_blank" rel="noopener noreferrer">Cast Iron Coding</a> and Paul M. Trubachik</p>
       </section>
     </Layout>
   );

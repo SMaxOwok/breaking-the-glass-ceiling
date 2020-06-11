@@ -75,6 +75,9 @@ export default () => {
               We believe that focusing on the person and humanizing their lived experiences will help us shape the future of tech.
             </p>
             <p className="about__description">New episodes are released twice monthly, on a Monday.</p>
+            <p className="about__description">
+              We love to hear from you! Send us a message at <a href="mailto:podcast@pdxwit.org">podcast@pdxwit.org</a>
+            </p>
 
             <Badges />
           </div>

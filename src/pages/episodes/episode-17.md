@@ -4,6 +4,7 @@ episode_number: 17
 release_date: "2020-02-24"
 cover: ../../images/episodes/episode-17.jpg
 audio: https://traffic.libsyn.com/pdxwit/E3_01_11_2020_jesselle.mp3
+transcript: ../../transcripts/episode-17.md
 ---
 Jesselle Hedman shares how her background in organizational communications theory helped her impact the workplace through an equity, inclusion, and diversity lens. From building out a diversity and inclusion program at Vacasa to recruiting for Thinkful, a forward thinking career accelerator program with an emphasis on student success.  
 

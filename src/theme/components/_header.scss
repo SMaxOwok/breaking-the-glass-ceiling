@@ -1,22 +1,23 @@
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80px;
+  text-align: center;
   width: 100%;
   position: fixed;
   z-index: 10;
-  background-color: #3e3c3c;
+  background-color: #FFF;
+  padding: 29px 0;
 
-  &__logo {
-    max-height: 50px;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
   }
 
   &__nav {
     display: flex;
     align-items: center;
-    flex-basis: 50%;
-    padding: 0 20px;
+    padding: 0 50px;
 
     &--left {
       justify-content: flex-start;
@@ -42,14 +43,17 @@
     letter-spacing: 0.075em;
     text-transform: uppercase;
     text-decoration: none;
-    color: #FFF;
-    margin-left: 25px;
+    color: #595959;
     padding: 4px 0 3px;
     border-bottom: 1px solid transparent;
     transition: border-bottom 0.2s ease;
 
     &:hover {
-      border-bottom: 1px solid #FFF;
+      border-bottom: 1px solid #595959;
+    }
+
+    + #{&} {
+      margin-left: 25px;
     }
   }
 }

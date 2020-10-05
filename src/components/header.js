@@ -24,7 +24,7 @@ const Header = () => {
     query HeaderQuery {
       logoImage: file(absolutePath: { regex: "/src/images/pdxwit_logo.png/" }) {
         childImageSharp {
-          fixed(height: 50) {
+          fixed(width: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -34,20 +34,22 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header__nav header__nav--left">
-        <a href="https://www.pdxwit.org">
-          <Img className="header__logo" fixed={data.logoImage.childImageSharp.fixed} />
-        </a>
-      </div>
-
-      <div className="header__nav header__nav--right">
-        <div className="header__links">
-          <Links />
+      <div className="header__content">
+        <div className="header__nav header__nav--left">
+          <a href="https://www.pdxwit.org">
+            <Img className="header__logo" fixed={data.logoImage.childImageSharp.fixed} />
+          </a>
         </div>
 
-        <MobileMenu>
-          <Links />
-        </MobileMenu>
+        <div className="header__nav header__nav--right">
+          <div className="header__links">
+            <Links />
+          </div>
+
+          <MobileMenu>
+            <Links />
+          </MobileMenu>
+        </div>
       </div>
     </header>
   );

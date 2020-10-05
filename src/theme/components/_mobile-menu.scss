@@ -17,13 +17,14 @@
 
       .mobile-menu__icon {
         display: block;
+        color: #FFF;
       }
     }
   }
 
   &__icon {
     display: none;
-    color: #FFF;
+    color: #595959;
     font-size: 2rem;
     cursor: pointer;
   }
@@ -47,7 +48,7 @@
     }
   }
 
-  &__nav-item {
+  .header__nav-item {
     font-family: "Oswald", sans-serif;
     font-size: 2rem;
     letter-spacing: 0.075em;
@@ -58,8 +59,9 @@
     border-bottom: 1px solid transparent;
     transition: border-bottom 0.2s ease;
 
-    + .mobile-menu__nav-item {
+    + .header__nav-item {
       margin-top: 25px;
+      margin-left: 0;
     }
 
     &:hover {

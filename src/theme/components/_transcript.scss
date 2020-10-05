@@ -3,8 +3,13 @@
 
   border: 1px solid #CCC;
   border-radius: 0.25rem;
-
   margin-top: 1rem;
+
+  &--open {
+    .transcript__content {
+      display: block;
+    }
+  }
 
   &__toggle {
     display: flex;
@@ -29,6 +34,7 @@
   }
 
   &__content {
+    display: none;
     border-top: 1px solid #CCC;
     border-bottom: 1px solid #CCC;
     padding: 1rem;

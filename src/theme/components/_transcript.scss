@@ -7,20 +7,25 @@
   margin-top: 1rem;
 
   &__toggle {
-    @extend %heading-secondary;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
 
+    h3 {
+      @extend %heading-secondary;
+    }
+
+    &__toggle-indicator {
+      @extend %heading-secondary;
+      
+      font-size: 1.5rem;
+      line-height: 1rem;
+    }
+
     &:hover {
       cursor: pointer;
     }
-  }
-
-  &__toggle-indicator {
-    font-size: 1.5rem;
-    line-height: 1rem;
   }
 
   &__content {

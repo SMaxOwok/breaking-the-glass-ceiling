@@ -9,7 +9,7 @@ const Transcript = ({ transcript }) => {
   return (
     <div className="transcript">
       <div className="transcript__toggle" onClick={handleToggle}>
-        <span>Transcript</span>
+        <h3>Transcript</h3>
         <span className="transcript__toggle-indicator">{expanded ? '-' : '+'}</span>
       </div>
 
